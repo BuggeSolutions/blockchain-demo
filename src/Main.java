@@ -1,5 +1,3 @@
-package controller;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/view/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
         primaryStage.setTitle("blockchain-demo");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
