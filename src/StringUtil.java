@@ -8,7 +8,13 @@ public class StringUtil{
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             // Apply sha256 to input
             byte[] hash = digest.digest(input.getBytes("UTF-8"));
-            return "";
+            StringBuffer hexString = new StringBuffer(); // Will contain hash as hexadecimal
+            for (int i = 0; i < hash.length; i++) {
+                String hex = Integer.toHexString(0xff & hash[i]);
+                if(hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
         }
         catch (Exception e)
         {

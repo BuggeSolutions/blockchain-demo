@@ -13,11 +13,19 @@ public class Block{
         this.hash = calculateHash();
     }
 
-    private String calculateHash(){
+    public String calculateHash(){
         String hash = StringUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
                         data);
         return hash;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public String getPreviousHash() {
+        return previousHash;
     }
 }
